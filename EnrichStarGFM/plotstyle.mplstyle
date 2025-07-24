@@ -1,0 +1,19 @@
+font.size: 12.0
+xtick.color: 1f1f1f
+xtick.direction: in
+xtick.top: 1
+ytick.color: 1f1f1f
+ytick.direction: in
+ytick.right: 1
+
+axes.linewidth: 0.5
+axes.titlesize: x-large
+axes.labelsize: 12
+axes.labelcolor: .15
+axes.axisbelow: True
+
+axes.prop_cycle: cycler(linestyle=['-', '--', '-.'])*cycler(color=['salmon', 'darkseagreen', 'teal','mediumvioletred', 'indianred', 'royalblue'])
+
+figure.edgecolor: 0.50
+legend.fontsize: 11
+figure.autolayout: False
