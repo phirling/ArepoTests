@@ -1,0 +1,1 @@
+Setup to create a spherical cloud of constant density surrounded by a lower density ambient mediu,. This example runs AREPO in MESHRELAX mode. Use as base ICs for other tests, and rescale the positions & masses as needed.

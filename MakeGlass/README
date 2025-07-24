@@ -1,0 +1,1 @@
+Setup to create a random, fully homogeneous gas distribution in a box. This example runs AREPO in MESHRELAX mode. Use as base ICs for other tests that require a uniform gas background.

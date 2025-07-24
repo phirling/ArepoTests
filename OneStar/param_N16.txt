@@ -1,0 +1,186 @@
+%----  Relevant files 
+InitCondFile                                      ./IC_NewStar_N16
+OutputDir                                         OUTPUT
+SnapshotFileBase                                  snap
+OutputListFilename                                ./output_list.txt
+MaxFilesWithConcurrentIO	                      1
+
+%----- Magnetohydrodynamics
+MHDSeedDir                                        4
+MHDSeedValue                                      1e-14
+
+%---- File formats
+ICFormat                                          3
+SnapFormat                                        3
+
+%---- CPU-time limits
+TimeLimitCPU                                      172800
+CpuTimeBetRestartFile                             3600
+FlushCpuTimeDiff                                  120
+ResubmitOn                                        0
+ResubmitCommand                                   my-scriptfile
+
+%----- Memory alloction
+MaxMemSize                                        2000
+
+%---- Caracteristics of run
+TimeBegin                                         0.1
+TimeMax                                           0.1339070168
+
+%---- Basic code options that set the type of simulation
+ComovingIntegrationOn                             1
+PeriodicBoundariesOn                              1
+CoolingOn                                         0
+StarformationOn                                   1
+
+%---- Cosmological parameters
+Omega0                                            0.3089
+OmegaLambda                                       0.6911
+OmegaBaryon                                       0.0486
+HubbleParam                                       0.6774
+BoxSize                                           6.774
+
+%---- Output frequency and output paramaters
+OutputListOn                                      0
+TimeBetSnapshot                                   1.000973725
+TimeOfFirstSnapshot                               0.1
+TimeBetStatistics                                 0.001
+NumFilesPerSnapshot                               1
+
+%---- Accuracy of time integration
+TypeOfTimestepCriterion                           0
+ErrTolIntAccuracy                                 0.012
+CourantFac                                        0.3
+MaxSizeTimestep                                   1e-4
+MinSizeTimestep                                   2e-11
+
+%---- Treatment of empty space and temperature limits
+InitGasTemp                                       244.81
+MinGasTemp                                        5
+MinimumDensityOnStartUp                           1e-20
+LimitUBelowThisDensity                            0
+LimitUBelowCertainDensityToThisValue              0
+MinEgySpec                                        0
+
+%---- Tree algorithm, force accuracy, domain update frequency
+TypeOfOpeningCriterion                            1
+ErrTolTheta                                       0.7
+ErrTolForceAcc                                    0.0025
+MultipleDomains                                   12
+TopNodeFactor                                     2.5
+ActivePartFracForNewDomainDecomp                  0.003
+
+%---- Initial density estimate
+DesNumNgb                                         64
+MaxNumNgbDeviation                                4
+
+%---- System of units
+UnitLength_in_cm                                  3.08568e+21
+UnitMass_in_g                                     1.989e+33
+UnitVelocity_in_cm_per_s                          100000
+GravityConstantInternal                           0
+
+%---- Gravitational softening lengths
+SofteningComovingType0                            1.966e-01
+SofteningComovingType1                            1.966e-01
+SofteningComovingType2                            1.966e-01
+SofteningComovingType3                            3.932e-01
+SofteningComovingType4                            7.864e-01
+SofteningComovingType5                            1.966e+00
+
+SofteningMaxPhysType0                             9.830e-02
+SofteningMaxPhysType1                             9.830e-02
+SofteningMaxPhysType2                             1.966e-01
+SofteningMaxPhysType3                             3.932e-01
+SofteningMaxPhysType4                             7.864e-01
+SofteningMaxPhysType5                             1.966e+00
+
+GasSoftFactor                                     2.5
+
+SofteningTypeOfPartType0                          0
+SofteningTypeOfPartType1                          1
+SofteningTypeOfPartType2                          3
+SofteningTypeOfPartType3                          4
+SofteningTypeOfPartType4                          1
+SofteningTypeOfPartType5                          2
+
+AdaptiveHydroSofteningSpacing                     1.2
+MinimumComovingHydroSoftening                     2.457e-02
+
+%----- Mesh regularization options
+CellShapingSpeed                                  0.5
+CellMaxAngleFactor                                2.25
+ReferenceGasPartMass                              314
+TargetGasMassFactor                               1
+RefinementCriterion                               1
+DerefinementCriterion                             1
+
+
+% ==================== SGChem ========================
+%--- Basic Options
+SGChemInitH2Abund                                 2.0e-6
+SGChemInitHPAbund                                 0.0004
+
+SGChemInitDIIAbund				                  1.04e-8
+SGChemInitHDAbund				                  0
+SGChemInitHeIIIAbund				              0
+
+% For networks 5 & 13:
+SGChemInitCPAbund                                 1e-9
+SGChemInitCOAbund                                 1e-9
+
+% For Nelson and Langer 99:
+SGChemInitCHxAbund                                1e-9 % 0
+SGChemInitOHxAbund                                1e-9 % 0
+SGChemInitHCOPAbund                               1e-9 % 0
+SGChemInitHePAbund                                1e-9 % 0
+SGChemInitMPAbund                                 1e-9 % 0
+DeutAbund                                         2.6e-5
+
+%---- Elemental abundances:
+AtomicCoolOption                                  3
+SGChemConstInitAbundances                         1
+
+%---- Dust properties
+InitDustTemp                                      2
+UVFieldStrength                                   0.0 % UV field strength in units of Habing field
+% DustToGasRatio                                    0.0                   % dust to gas ratio in units of local (i.e. Z = Z_sun) value
+CosmicRayIonRate                                  0.0
+InitRedshift                                      127
+ExternalDustExtinction                            0                   % visual magnitudes of dust extinction contributed by gas outs    ide of simulation volume:
+
+%---- Strength of H2 formation heating
+H2FormEx                                          0.84
+H2FormKin                                         0.12
+
+%---- Photochemistry
+PhotoApprox                                       6                   % 0==optically thin, 6==Treecol
+ISRFOption                                        1                   % 1 == Mathis et al (1983), 2 == Black (1994)
+LWBGType                                          0
+LWBGStartRedsh                                    0
+% TreeColMaxDistance                              0.3                 % in internal units
+% %FracOverlap                                    1.694
+H2OpacityOption                                   0
+SGChemTemperatureFloor                            20
+SGChemApplySelfShieldingFactor			          1
+
+% ===================================================
+
+%---- Star Formation (SF_ECOGAL)
+SF_Mechanism                                      4         % Star formation recipe. 4: Dens. thresh + velocity divergence + Jeans criterion
+SFDensityThreshold                                1.5       % Gas density threshold for star formation (phys. mass dens.)
+SFEfficiency                                      0.01      % Star formation efficiency
+
+
+%--- SN feedback (SNE)
+SNEInjectionCriterion                             11
+SNESeed                                           355
+SNETargetMass                                     0
+SNEPeriodInYears                                  2e5
+SNEMinimalParticleNumber                          10
+SNEMaxRadiusInParsecs                             300
+SNEInjectionScheme                                2         % 0 = N closest cells, 1 = fixed radius, 2 = Neighboring cells
+SNETemperatureMax                                 0                          
+SNStellarLifetime                                 1
+LifetimeShorteningFactor                          0 % Unused if SNStellarLifetime=1
+TimeForLifetimeIncrease                           0 % Unused if SNStellarLifetime=1

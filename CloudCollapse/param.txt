@@ -1,0 +1,116 @@
+%----  Relevant files 
+InitCondFile                                      IC_SphericalCloudStatic_N64
+OutputDir                                         OUTPUT
+SnapshotFileBase                                  snap
+OutputListFilename                                ./output_list.txt
+MaxFilesWithConcurrentIO	                      1
+
+%----- Magnetohydrodynamics
+% MHDSeedDir                                        4
+% MHDSeedValue                                      1e-14
+
+%---- File formats
+ICFormat                                          3
+SnapFormat                                        3
+
+%---- CPU-time limits
+TimeLimitCPU                                      172800
+CpuTimeBetRestartFile                             3600
+% FlushCpuTimeDiff                                  120
+ResubmitOn                                        0
+ResubmitCommand                                   my-scriptfile
+
+%----- Memory alloction
+MaxMemSize                                        2000
+
+%---- Caracteristics of run
+TimeBegin                                         0.1
+TimeMax                                           0.1002439635
+
+%---- Basic code options that set the type of simulation
+ComovingIntegrationOn                             1
+PeriodicBoundariesOn                              0
+CoolingOn                                         0
+StarformationOn                                   0
+
+%---- Cosmological parameters
+Omega0                                            0.3089
+OmegaLambda                                       0.6911
+OmegaBaryon                                       0.0486
+HubbleParam                                       0.6774
+BoxSize                                           0.27096
+
+%---- Output frequency and output paramaters
+OutputListOn                                      0
+TimeBetSnapshot                                   1.000012183
+TimeOfFirstSnapshot                               0.1
+TimeBetStatistics                                 0.001
+NumFilesPerSnapshot                               1
+
+%---- Accuracy of time integration
+TypeOfTimestepCriterion                           0
+ErrTolIntAccuracy                                 0.012
+CourantFac                                        0.3
+MaxSizeTimestep                                   1e-6
+MinSizeTimestep                                   2e-11
+
+%---- Treatment of empty space and temperature limits
+InitGasTemp                                       244.81
+MinGasTemp                                        5
+MinimumDensityOnStartUp                           1e-20
+LimitUBelowThisDensity                            0
+LimitUBelowCertainDensityToThisValue              0
+MinEgySpec                                        0
+
+%---- Tree algorithm, force accuracy, domain update frequency
+TypeOfOpeningCriterion                            1
+ErrTolTheta                                       0.7
+ErrTolForceAcc                                    0.0025
+MultipleDomains                                   12
+TopNodeFactor                                     2.5
+ActivePartFracForNewDomainDecomp                  0.003
+
+%---- Initial density estimate
+DesNumNgb                                         64
+MaxNumNgbDeviation                                4
+
+%---- System of units
+UnitLength_in_cm                                  3.08568e+21
+UnitMass_in_g                                     1.989e+33
+UnitVelocity_in_cm_per_s                          100000
+GravityConstantInternal                           0
+
+%---- Gravitational softening lengths
+SofteningComovingType0                            1e-03
+SofteningComovingType1                            1.966e-01
+SofteningComovingType2                            1.966e-01
+SofteningComovingType3                            3.932e-01
+SofteningComovingType4                            7.864e-01
+SofteningComovingType5                            1.966e+00
+
+SofteningMaxPhysType0                             9.830e-02
+SofteningMaxPhysType1                             9.830e-02
+SofteningMaxPhysType2                             1.966e-01
+SofteningMaxPhysType3                             3.932e-01
+SofteningMaxPhysType4                             7.864e-01
+SofteningMaxPhysType5                             1.966e+00
+
+GasSoftFactor                                     2.5
+
+SofteningTypeOfPartType0                          0
+SofteningTypeOfPartType1                          1
+SofteningTypeOfPartType2                          3
+SofteningTypeOfPartType3                          4
+SofteningTypeOfPartType4                          1
+SofteningTypeOfPartType5                          2
+
+AdaptiveHydroSofteningSpacing                     1.2
+MinimumComovingHydroSoftening                     2e-04
+
+%----- Mesh regularization options
+CellShapingSpeed                                  0.5
+CellMaxAngleFactor                                2.25
+ReferenceGasPartMass                              30.7
+TargetGasMassFactor                               1
+RefinementCriterion                               1
+DerefinementCriterion                             1

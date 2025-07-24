@@ -1,0 +1,7 @@
+Collapse of a spherical, homogeneous gas cloud in pressure equilibrium with a surrounding, rarified medium.
+
+The cloud can be initialized to have no bulk velocity (only pressure), random gaussian velocities, or a velocity distribution that follows a turbulent power spectrum generated with C. Federrath's TurbGen code.
+
+Can be run with or without gravity, cooling & star formation.
+
+See the example 'MakeUniformCloud' to generate the base IC file needed for this test.

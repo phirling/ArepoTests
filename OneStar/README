@@ -1,0 +1,3 @@
+Simple test of a single star particle (SF_ECOGAL) in a box containing homogeneous gas. We set the stellar mass, let AREPO resample the IMF to populate the particle with massive stars, which then explode as supernovae.
+
+See the example 'MakeGlass' to generate the base IC file needed for this test.
